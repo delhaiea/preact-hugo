@@ -24,4 +24,6 @@ steps:
   settings:
     ssh_key:
       from_secret: github_ssh_key
-    pages_directory: test
+    username:
+      from_secret: github_username
+    pages_directory: test/build
