@@ -12,13 +12,6 @@ steps:
   - npm i
   - npm run build
 
-- name: slack
-  image: plugins/slack
-  settings:
-    webhook:
-      from_secret: slack_webhook
-    channel: drone-ci
-
 - name: publish  
   image: plugins/gh-pages
   settings:
@@ -26,4 +19,11 @@ steps:
       from_secret: github_ssh_key
     username:
       from_secret: github_username
-    pages_directory: build
+    pages_directory: test/dist
+
+- name: slack
+  image: plugins/slack
+  settings:
+    webhook:
+      from_secret: slack_webhook
+    channel: drone-ci
