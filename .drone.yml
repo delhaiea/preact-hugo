@@ -12,7 +12,6 @@ steps:
   - npm i
   - npm build test
 
-steps:
 - name: slack
   image: plugins/slack
   settings:
@@ -20,7 +19,6 @@ steps:
       from_secret: slack_webhook
     channel: drone-ci
 
-steps:
 - name: publish  
   image: plugins/gh-pages
   settings:
