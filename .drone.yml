@@ -5,6 +5,6 @@ name: salut
 
 steps:
 - name: hello-world
-  image: busybox
+  image: lowess/preact-cli
   commands:
-  - echo 'Hello Word'
+  - preact-cli create delhaiea/preact-hugo test
