@@ -26,4 +26,4 @@ steps:
       from_secret: github_ssh_key
     username:
       from_secret: github_username
-    pages_directory: test/build
+    pages_directory: build
