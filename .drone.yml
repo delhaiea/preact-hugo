@@ -10,7 +10,7 @@ steps:
   - npx preact-cli create delhaiea/preact-hugo test
   - cd test
   - npm i
-  - npm build test
+  - npm run build
 
 - name: slack
   image: plugins/slack
