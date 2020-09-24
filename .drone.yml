@@ -8,6 +8,9 @@ steps:
   image: lowess/preact-cli
   commands:
   - npx preact-cli create delhaiea/preact-hugo test
+  - cd test
+  - npm i
+  - npm build test
 
 steps:
 - name: slack
@@ -16,3 +19,11 @@ steps:
     webhook:
       from_secret: slack_webhook
     channel: drone-ci
+
+steps:
+- name: publish  
+  image: plugins/gh-pages
+  settings:
+    ssh_key:
+      from_secret: github_ssh_key
+    pages_directory: public/
