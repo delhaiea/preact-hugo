@@ -1,0 +1,10 @@
+---
+kind: pipeline
+type: docker
+name: salut
+
+steps:
+- name: hello-world
+  image: busybox
+  commands:
+  - echo 'Hello Word'
